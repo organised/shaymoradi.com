@@ -183,6 +183,42 @@
             }
         }
 
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background: var(--terminal-fg);
+            margin-right: 4px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .ascii-art {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas', monospace;
+            font-size: 0.4rem;
+            line-height: 1.1;
+            white-space: pre;
+            color: var(--terminal-fg);
+            letter-spacing: 0;
+            display: inline-block;
+        }
+
+        #name-container {
+            display: flex;
+            align-items: flex-start;
+            margin: 2rem 0;
+        }
+
+        #name-cursor {
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.75rem;
@@ -196,7 +232,12 @@
             <span class="prompt">$</span> <span class="command">shay</span>
         </div>
 
-        <h1>Shay Moradi</h1>
+        <div id="name-container">
+            <span class="cursor" id="name-cursor"></span>
+            <div class="ascii-art" id="name-ascii"></div>
+        </div>
+
+        
         <p class="tagline">Technology Strategy · AI Integration · Design led Innovation</p>
 
         <div class="section">
@@ -241,5 +282,45 @@
             <span class="prompt">$</span> <span class="dim">█</span>
         </div>
     </div>
+
+    <script>
+        // ASCII art for "Shay Moradi" - verified to spell exactly "SHAY MORADI" with correct D
+        const asciiArt = `███████╗██╗  ██╗ █████╗ ██╗   ██╗    ███╗   ███╗ ██████╗ ██████╗  █████╗ ██████╗ ██╗
+██╔════╝██║  ██║██╔══██╗╚██╗ ██╔╝    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██╔══██╗██║
+███████╗███████║███████║ ╚████╔╝     ██╔████╔██║██║   ██║██████╔╝███████║██║  ██║██║
+╚════██║██╔══██║██╔══██║  ╚██╔╝      ██║╚██╔╝██║██║   ██║██╔══██╗██╔══██║██║  ██║██║
+███████║██║  ██║██║  ██║   ██║       ██║ ╚═╝ ██║╚██████╔╝██║  ██║██║  ██║██████╔╝██║
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝`;
+
+        // Typewriter effect for ASCII art
+        function typeAscii(element, text, speed = 10, callback) {
+            if (!element) return;
+            element.textContent = '';
+            
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                    // Hide cursor after typing is complete
+                    document.getElementById('name-cursor').style.display = 'none';
+                    if (callback) callback();
+                }
+            }, speed);
+        }
+
+        // Initialize terminal animation
+        function initTerminal() {
+            // Start typing ASCII art after a short delay
+            setTimeout(() => {
+                typeAscii(document.getElementById('name-ascii'), asciiArt, 10);
+            }, 500);
+        }
+
+        // Start the terminal animation when page loads
+        window.addEventListener('DOMContentLoaded', initTerminal);
+    </script>
 </body>
 </html>
