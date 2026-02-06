@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shay Moradi – Technology Strategy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --terminal-bg: #000000;
+            --terminal-fg: #ffffff;
+            --terminal-dim: #666666;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas', monospace;
+            background: var(--terminal-bg);
+            color: var(--terminal-fg);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .terminal {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .prompt {
+            color: var(--terminal-fg);
+            font-weight: 500;
+        }
+
+        .command {
+            color: var(--terminal-fg);
+            font-weight: 500;
+        }
+
+        .line {
+            margin: 0.75rem 0;
+        }
+
+        h1 {
+            color: var(--terminal-fg);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 2rem 0 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            color: var(--terminal-fg);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 3rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .tagline {
+            color: var(--terminal-dim);
+            font-size: 1.1rem;
+            margin: 1rem 0 2rem 0;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0.75rem 0;
+            color: var(--terminal-dim);
+            max-width: 80ch;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid var(--terminal-fg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight p {
+            margin: 0.5rem 0;
+            color: var(--terminal-dim);
+        }
+
+        .metric {
+            color: var(--terminal-fg);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        details {
+            margin: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        summary {
+            color: var(--terminal-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            user-select: none;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+        }
+
+        summary:hover {
+            color: var(--terminal-fg);
+        }
+
+        summary::marker {
+            color: var(--terminal-fg);
+        }
+
+        .tree-content {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--terminal-dim);
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0.5rem 0;
+            color: var(--terminal-dim);
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--terminal-dim);
+        }
+
+        a {
+            color: var(--terminal-fg);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--terminal-fg);
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .contact {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--terminal-dim);
+        }
+
+        .dim {
+            color: var(--terminal-dim);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .highlight {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="line">
+            <span class="prompt">$</span> <span class="command">shay</span>
+        </div>
+
+        <h1>Shay Moradi</h1>
+        <p class="tagline">Technology Strategy · AI Integration · Design led Innovation</p>
+
+        <div class="section">
+            <p>I'm the superglue between emerging technologies and real organisational needs. With 20+ years building practical, working solutions—from automotive prototyping to AI & automation— I'm a hands-on individual contributor or work in very small teams. I also scale this up: incubating products, presenting strategy, guiding growing companies through innovation programmes. My background teaching code in creative contexts, and writing continues to shape how I solve problems. Pragmatic optimist to the core. Work well with others who dream and imagine for better</p>
+        </div>
+
+        <div class="highlight">
+            <p><span class="metric">Head of Technology — Vital Auto</span></p>
+            <p>Automotive & Aviation prototyping. Interactive HMI systems. AI-based tools in Mfg. Making future concepts tangible enough to decide on.</p>
+            
+            <p style="margin-top: 1.5rem;"><span class="metric">Co-founder — OIAI.studio</span></p>
+            <p>AI consultancy for ambitious brands. Workflow analysis. Rapid prototyping. Embedded inquiry methodology. Currently: Mars</p>
+        </div>
+
+        <div class="section">
+            <h2>Recent Work - Last Decade</h2>
+            <p>Aviation and Mobility Programmes. ML ergonomic assessment app. HMI demonstrators. Work with Mars. Advisory to KU, Mr Beast, Kings Trust, Coca Cola</p>
+        </div>
+
+        <details>
+            <summary>Background</summary>
+            <div class="tree-content">
+                <p>Started as an academic at Huddersfield teaching multimedia design. Published a book on glitch aesthetics (Thames & Hudson). Co-founded Running in the Halls in 2009—built apps and experiences for Ford, Coca-Cola, BBC, Channel 4, Mars, Rolls-Royce.</p>
+
+                <p style="margin-top: 1.5rem;">Now split time between Vital Auto and OIAI. Still doing the same thing: figure out what's actually useful, build it, make it work.</p>
+
+                <p style="margin-top: 1.5rem;"><strong>Education:</strong> PhD by publication (2027), MA Smart Design (Distinction), BA Multimedia (First Class)</p>
+            </div>
+        </details>
+
+        <div class="contact">
+            <div class="line">
+                <span class="prompt">$</span> <span class="command">contact</span>
+            </div>
+            <p>
+                <a href="mailto:organised@gmail.com">organised@gmail.com</a> · 
+                <a href="https://www.linkedin.com/in/organised" target="_blank">linkedin</a>
+            </p>
+        </div>
+
+        <div class="line" style="margin-top: 3rem;">
+            <span class="prompt">$</span> <span class="dim">█</span>
+        </div>
+    </div>
+</body>
+</html>
